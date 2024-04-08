@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import BottomNav from "@/components/mui-bottom-nav";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,9 +16,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+      <html lang="en">
+        <body className={inter.className}>
+          {children}{" "}
+          <div className="fixed bottom-0 left-0 right-0">
+            <BottomNav />
+          </div>
+        </body>
+      </html>
+    </AppRouterCacheProvider>
   );
 }
