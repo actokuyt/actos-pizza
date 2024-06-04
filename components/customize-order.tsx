@@ -17,21 +17,29 @@ export default function CustomizeOrder() {
         onClick={handleOpen}
         className="bg-[#ed4734] p-2 rounded-lg mx-auto"
       >
-        Customize Your Order
+        Order Custom Pizza
       </Button>
       <Modal
         open={open}
         onClose={handleClose}
+        disableScrollLock={false}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <div className="card">
-          <div onClick={handleClose}>
-            <CloseOutlinedIcon />
+        <div
+          className="card p-4 rounded-lg max-h-[95%] w-[95%] absolute top-[50%] left-[50%]
+        -translate-x-2/4 -translate-y-2/4 overflow-auto"
+        >
+          <div onClick={handleClose} className="relative">
+            <span className="fixed top-4 right-4 cursor-pointer">
+              <CloseOutlinedIcon />
+            </span>
           </div>
 
-          <div>
-            <h1>Customize Your Pizza</h1>
+          <div className="mt-12">
+            <h1 className="text-center text-xl font-semibold mb-4">
+              Customize Your Pizza
+            </h1>
             <CustomizeOrderForm />
           </div>
         </div>
