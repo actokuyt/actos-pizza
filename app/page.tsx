@@ -16,7 +16,7 @@ export default function Home() {
 
         <div>
           <h1 className="text-2xl font-semibold text-center p-4">
-            Acto's Pizza
+            Acto&apos;s Pizza
           </h1>
         </div>
 
